@@ -3,6 +3,10 @@ var timeLeft = document.querySelector("#timer");
 var questionTitle = document.querySelector("#question");
 var answerList = document.querySelector("#answers");
 var scoreAmount = document.querySelector("#score");
+var todoInput = document.querySelector("#todo-text");
+var todoForm = document.querySelector("#todo-form");
+var todoList = document.querySelector("#todo-list");
+var todoCountSpan = document.querySelector("#todo-count");
 // Creates questions for the quiz
 var li1 = document.createElement("li");
 var li2 = document.createElement("li");
@@ -23,9 +27,61 @@ function updateQuestionA() {
 }
 
 let time = 100;
+
+var initialArray = [];
+
+function renderTodos() {
+  // Clear todoList element and update todoCountSpan
+  todoList.innerHTML = "";
+
+  // Render a new li for each todo
+  for (var i = 0; i < initialArray.length; i++) {
+    var initials = initialArray[i];
+
+    var li = document.createElement("li");
+    li.textContent = initials;
+    li.setAttribute("data-index", i);
+    todoList.appendChild(li);
+  }
+}
+
+function storeTodos() {
+  // Stringify and set key in localStorage to todos array
+  localStorage.setItem("todos", JSON.stringify(initialArray));
+}
+
+todoForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var todoText = todoInput.value.trim();
+
+  // Return from function early if submitted todoText is blank
+  if (todoText === "") {
+    return;
+  }
+
+  // Add new todoText to todos array, clear the input
+  initialArray.push(todoText);
+  todoInput.value = "";
+
+  // Store updated todos in localStorage, re-render the list
+  renderTodos();
+});
+
+
 function timeCount() {
-  timeLeft.textContent = time + " seconds left";
+  let downloadTimer = setInterval(function(){
+    if(time <= 0){
+      clearInterval(downloadTimer);
+      timeLeft.textContent = "Finished";
+    } else {
+      timeLeft.textContent = time + " seconds remaining";
+    }
+    time--;
+  }, 1000);
 };
+
+
 
 
 questionTitles = ["What is JavaScript?", "Question 2", "Question 3", "Question 4"]
