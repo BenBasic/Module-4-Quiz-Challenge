@@ -33,7 +33,7 @@ THEN I can save my initials and score
 The assignment is to create a quiz which tracks time, score, and allows the user to submit and save a highscore, looking something like this
 
 
-![alt text](assets/images/screenshote.png)
+![alt text](assets/images/screenshot.png)
 
 
 ## Link To Deployed Application
