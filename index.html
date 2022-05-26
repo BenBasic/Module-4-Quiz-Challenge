@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Todo List</title>
+    <title>JavaScript Quiz</title>
   </head>
   <body>
     <div class="card">
-      <h1>Programming Quiz</h1>
+      <h1 id="quiz-title">Programming Quiz</h1>
       <button id="start-btn">Start Quiz</button>
       <p id="timer"></p>
       <p id="score"></p>
@@ -19,7 +19,7 @@
   </div>
   <section>
     <form id="todo-form" method="POST">
-        <label for="todo-text">The Quiz Is Over. Please Enter Your Initials:</label>
+        <label for="todo-text" id="quiz-over-text">The Quiz Is Over. Please Enter Your Initials:</label>
         <input type="text" placeholder="My Initials [Example: AG]" name="todo-text" id="todo-text" />
       </form>
       <ul id="todo-list"></ul>

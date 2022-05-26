@@ -1,0 +1,83 @@
+/*
+REMEMBER TO: 
+.hide display:none
+*/
+:root {
+    --btn-color:#dd0a62;
+    --txt-color:white;
+    --box-radius:100px;
+}
+* {
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #9cdacf;
+}
+
+button {
+    font-size: 50px;
+    background-color: var(--btn-color);
+    color: var(--txt-color);
+    margin: 10px 10px;
+    padding: 10px;
+    display: block;
+    border-style: solid;
+    border-radius: var(--box-radius);
+    cursor: pointer;
+
+}
+
+li {
+    font-size: 20px;
+    background-color: var(--btn-color);
+    color: var(--txt-color);
+    margin: 10px 10px;
+    padding: 10px;
+    display: block;
+    border-style: solid;
+    border-radius: var(--box-radius);
+    cursor: pointer;
+}
+
+#quiz-title {
+    display:inline-block;
+    background-color: white;
+    border-radius: var(--box-radius);
+}
+
+#question {
+    display:block;
+    text-decoration: underline;
+    background-color: white;
+    border-radius: var(--box-radius);
+}
+
+#score {
+    display:inline-block;
+    font-weight: 600;
+    background-color: white;
+    border-radius: var(--box-radius);
+    
+}
+
+#timer {
+    display:inline-block;
+    font-weight: 600;
+    background-color: white;
+    border-radius: var(--box-radius);
+}
+
+#todo-text {
+    font-weight: 600;
+}
+
+#quiz-over-text {
+    font-weight: 600;
+}
+
+#todo-list {
+    font-weight: 600;
+}
