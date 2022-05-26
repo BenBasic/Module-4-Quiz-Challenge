@@ -113,7 +113,6 @@ function updateQuestion(index) {
   li3.textContent = optionC[index];
   li4.textContent = optionD[index];
 } else {
-  start.style.display = "block";
   highscoreForm.style.display = "block";
   highscoreList.style.display = "inline-block";
   questionTitle.style.display = "none";
